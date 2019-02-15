@@ -70,17 +70,17 @@ view: users {
 
   dimension: shipping_city {
     sql: ${TABLE}.city ;;
-    group_label: "Shipping Info"
+#     group_label: "Shipping Info"
 #     group_item_label: "City"
   }
   dimension: shipping_state {
     sql: ${TABLE}.state ;;
-    group_label: "Shipping Info"
+#     group_label: "Shipping Info"
 #     group_item_label: "State"
   }
   dimension: shipping_street {
     sql: ${TABLE}.zip ;;
-    group_label: "Shipping Info"
+#     group_label: "Shipping Info"
 #     group_item_label: "Street"
   }
 
