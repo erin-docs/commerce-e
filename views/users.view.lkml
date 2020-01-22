@@ -1,3 +1,4 @@
+include: "/views/events.view"
 view: users {
   sql_table_name: users ;;
 
@@ -6,6 +7,7 @@ view: users {
     type: number
     sql: ${TABLE}.id ;;
   }
+
 
   dimension: age {
     type: number
@@ -89,7 +91,9 @@ view: users {
   }
 
 
-
+dimension: user_events_id {
+    sql: ${events.user_id};;
+}
 
   measure: count {
     type: count
