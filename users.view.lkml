@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: demo_db.users ;;
+  sql_table_name: users ;;
 
   dimension: id {
     primary_key: yes
@@ -65,6 +65,10 @@ view: users {
   dimension: zip {
     type: zipcode
     sql: ${TABLE}.zip ;;
+  }
+
+  dimension: full_name {
+    sql: ${first_name} || ' ' || ${last_name} ;;
   }
 
 

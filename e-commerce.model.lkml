@@ -1,4 +1,4 @@
-connection: "thelook"
+connection: "red_look"
 
 # include all the views
 include: "*.view"
@@ -6,7 +6,12 @@ include: "*.view"
 # include all the dashboards
 # include: "*.dashboard"
 
-explore: connection_reg_r3 {}
+explore: connection_reg_r3 {
+}
+
+explore: users_extended {}
+
+explore: users_with_age_extensions {}
 
 explore: events {
   join: users {
