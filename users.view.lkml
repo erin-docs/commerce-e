@@ -12,6 +12,13 @@ view: users {
     sql: ${TABLE}.age ;;
   }
 
+  dimension: age_tier {
+    type: tier
+    sql:  ${age} ;;
+    style: integer
+    tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80]
+  }
+
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
@@ -90,6 +97,11 @@ view: users {
   measure: count {
     type: count
     drill_fields: [detail*]
+  }
+
+  measure: user_cities {
+    type: list
+    list_field: city
   }
 
   # ----- Sets of fields for drilling ------
