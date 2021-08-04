@@ -1,13 +1,11 @@
-include: "/views/events.view"
 view: users {
-  sql_table_name: users ;;
+  sql_table_name: demo_db.users ;;
 
   dimension: id {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
-
 
   dimension: age {
     type: number
@@ -76,10 +74,6 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
-  dimension: full_name {
-    sql: ${first_name} || ' ' || ${last_name} ;;
-  }
-
 
   dimension: shipping_city {
     sql: ${TABLE}.city ;;
@@ -98,13 +92,16 @@ view: users {
   }
 
 
-dimension: user_events_id {
-    sql: ${events.user_id};;
-}
+
 
   measure: count {
     type: count
     drill_fields: [detail*]
+  }
+
+  measure: user_cities {
+    type: list
+    list_field: city
   }
 
   # ----- Sets of fields for drilling ------
