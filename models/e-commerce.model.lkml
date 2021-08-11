@@ -6,8 +6,6 @@ include: "/views/*.view"
 # include all the dashboards
 # include: "*.dashboard"
 
-explore: connection_reg_r3 {
-}
 
 explore: users_extended {}
 
